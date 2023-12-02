@@ -20,8 +20,6 @@ public class Puzzle1 {
     private final File input;
     
     public Puzzle1(File in) {
-        solveLine("eighthree");
-        solveLine("sevenine");
         input = in;
     }
     
@@ -42,13 +40,13 @@ public class Puzzle1 {
         BufferedReader in = new BufferedReader(new FileReader(input));
         String line;
         int sum = 0;
-        int lines = 0;
+        //int lines = 0;
         while((line = in.readLine()) != null) {
             line = line.trim();
             if(line.isBlank())
                 continue;
-            lines++;
-            System.out.println("Line: " + line);
+            //lines++;
+            //System.out.println("Line: " + line);
             int firstIndex = firstNumberIndex(line);
             int firstIndex2 = firstWordIndex(line);
             if(firstIndex < 0 || (firstIndex2 > -1 && firstIndex2 < firstIndex))
@@ -57,10 +55,10 @@ public class Puzzle1 {
             int lastIndex2 = lastWordIndex(line);
             if(lastIndex < 0 || lastIndex2 > lastIndex)
                 lastIndex = lastIndex2;
-            System.out.println("First: " + firstIndex + " Last: " + lastIndex + " Sum: " + (extract(line, firstIndex) * 10 + extract(line, lastIndex)));
+            //System.out.println("First: " + firstIndex + " Last: " + lastIndex + " Sum: " + (extract(line, firstIndex) * 10 + extract(line, lastIndex)));
             sum += extract(line, firstIndex) * 10 + extract(line, lastIndex);
         }
-        System.out.println("Lines: " + lines);
+        //System.out.println("Lines: " + lines);
         return "" + sum;
     }
     
