@@ -75,6 +75,12 @@ public class Puzzle4 {
         return "" + sum;
     }
     
+    /**
+     * Original, slow solution. Takes over 12 sec 
+     * to get correct result.
+     * @return Total number of cards (14814534)
+     * @throws IOException 
+     */
     public String solve2() throws IOException {
         BufferedReader in = new BufferedReader(new FileReader(input));
         List<Card> cards = new ArrayList<>();
@@ -104,6 +110,36 @@ public class Puzzle4 {
         return "" + sum;
     }
     
+    /**
+     * Honor restored. Solves part2 in half a second
+     * @return Total number of cards (14814534)
+     * @throws IOException 
+     */
+    public String solve3() throws IOException {
+        BufferedReader in = new BufferedReader(new FileReader(input));
+        int[] cards = getArray(250, 1);
+        String line;
+        int sum = 0;
+        int lineCount = 0;
+        while((line = in.readLine()) != null) {
+            line = line.trim();
+            if(line.isBlank())
+                continue;
+            line = line.split(":")[1];
+            Set<Integer> winners = getNumArray(line.split("\\|")[0]);
+            Set<Integer> numbers = getNumArray(line.split("\\|")[1]);
+            numbers.retainAll(winners);
+            int count = numbers.size();
+            System.out.println("Line: " + lineCount + " Wins: " + count + " Count: " + cards[lineCount]);
+            sum += cards[lineCount];
+            lineCount++;
+            for(int i = 0; i < count; i++) {
+                cards[lineCount + i] += cards[lineCount - 1];
+            }
+        }
+        return "" + sum;
+    }
+    
     private Set<Integer> getNumArray(String str) {
         String[] num = str.split(" ");
         Set<Integer> ret = new HashSet<>();
@@ -113,6 +149,13 @@ public class Puzzle4 {
             } catch(NumberFormatException e) {
             }
         }
+        return ret;
+    }
+    
+    private int[] getArray(int length, int init) {
+        int[] ret = new int[length];
+        for(int i = 0; i < length; i++)
+            ret[i] = init;
         return ret;
     }
     

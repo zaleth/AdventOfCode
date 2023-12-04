@@ -20,7 +20,7 @@ public class AdventOfCode {
         try {
             Puzzle4 puzzle = new Puzzle4(new File(INPUT_DIR, "day4-input.txt"));
             //Puzzle4 puzzle = new Puzzle4(new File(INPUT_DIR, "test.txt"));
-            System.out.println("Result: " + puzzle.solve2());
+            System.out.println("Result: " + puzzle.solve3());
         } catch(IOException e) {
             e.printStackTrace();
         }
