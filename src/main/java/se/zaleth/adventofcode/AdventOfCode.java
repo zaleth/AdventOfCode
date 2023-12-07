@@ -18,8 +18,8 @@ public class AdventOfCode {
     public static void main(String[] args) {
         System.out.println("Current dir: " + INPUT_DIR.getAbsolutePath());
         try {
-            Puzzle6 puzzle = new Puzzle6(new File(INPUT_DIR, "day6-input.txt"));
-            //Puzzle6 puzzle = new Puzzle6(new File(INPUT_DIR, "test.txt"));
+            Puzzle7 puzzle = new Puzzle7(new File(INPUT_DIR, "day7-input.txt"));
+            //Puzzle7 puzzle = new Puzzle7(new File(INPUT_DIR, "test.txt"));
             System.out.println("Result: " + puzzle.solve2());
         } catch(IOException e) {
             e.printStackTrace();
