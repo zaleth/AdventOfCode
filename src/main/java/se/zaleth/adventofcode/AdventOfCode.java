@@ -18,9 +18,9 @@ public class AdventOfCode {
     public static void main(String[] args) {
         System.out.println("Current dir: " + INPUT_DIR.getAbsolutePath());
         try {
-            Puzzle11 puzzle = new Puzzle11(new File(INPUT_DIR, "day11-input.txt"));
-            //Puzzle11 puzzle = new Puzzle11(new File(INPUT_DIR, "test.txt"));
-            System.out.println("Result: " + puzzle.solve());
+            //Puzzle12 puzzle = new Puzzle12(new File(INPUT_DIR, "day12-input.txt"));
+            Puzzle12 puzzle = new Puzzle12(new File(INPUT_DIR, "test.txt"));
+            System.out.println("Result: " + puzzle.solve2());
         } catch(IOException e) {
             e.printStackTrace();
         }
