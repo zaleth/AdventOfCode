@@ -28,9 +28,9 @@ public class AdventOfCode extends JFrame {
     public static void main(String[] args) {
         System.out.println("Current dir: " + INPUT_DIR.getAbsolutePath());
         try {
-            Puzzle22 puzzle = new Puzzle22(new File(INPUT_DIR, "day22-input.txt"));
-            //Puzzle22 puzzle = new Puzzle22(new File(INPUT_DIR, "test.txt"));
-            System.out.println("Result: " + puzzle.solve2());
+            //Puzzle23 puzzle = new Puzzle23(new File(INPUT_DIR, "day23-input.txt"));
+            Puzzle23 puzzle = new Puzzle23(new File(INPUT_DIR, "test.txt"));
+            System.out.println("Result: " + puzzle.solve());
         } catch(IOException e) {
             e.printStackTrace();
         }
